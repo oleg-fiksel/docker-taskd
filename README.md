@@ -4,6 +4,7 @@
 
 Details: https://gitpitch.com/GothenburgBitFactory/taskserver-setup#/
 
+/data/config:
 ```
 ...
 log=/log/taskd.log
