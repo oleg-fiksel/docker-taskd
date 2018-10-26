@@ -2,7 +2,9 @@
 
 ## Config
 
-Details: https://gitpitch.com/GothenburgBitFactory/taskserver-setup#/
+Details:
+* https://taskwarrior.org/docs/taskserver/setup.html
+* https://gitpitch.com/GothenburgBitFactory/taskserver-setup#/
 
 /data/config:
 ```
