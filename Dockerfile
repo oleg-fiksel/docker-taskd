@@ -9,15 +9,17 @@ RUN wget "https://taskwarrior.org/download/taskd-${TASKD_VER}.tar.gz" && \
   tar xzf taskd-${TASKD_VER}.tar.gz && \
   cd taskd-* && \
   cmake -DCMAKE_BUILD_TYPE=release . && \
-  make install
+  make install && \
+  cp -rv pki /usr/local/
 
 FROM ubuntu:18.04
 # Add user
 RUN groupadd -g 1000 taskd \
   && useradd -d /home/taskd --create-home -u 1000 -g 1000 -s /bin/bash taskd
 RUN apt-get update && \
-  apt-get install -y libgnutls30 uuid netcat
+  apt-get install -y libgnutls30 uuid netcat gnutls-bin
 COPY --from=BUILD /usr/local /usr/
+COPY --from=BUILD /usr/local/pki /opt/pki
 RUN apt-get clean
 USER taskd
 VOLUME ["/data"]
