@@ -33,6 +33,7 @@ Docker stack file:
 version: '3.2'
 services:
  taskd:
+  hostname: taskd
   image: "olegfiksel/docker-taskd"
   environment:
     TZ: Europe/Berlin
