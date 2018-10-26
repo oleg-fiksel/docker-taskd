@@ -1,12 +1,13 @@
 FROM ubuntu:18.04 AS BUILD
 
-ARG TASKD_TAG=s1.2.0
+ARG TASKD_TAG=1a4a67b8f0ebae4e7c26def71c2138a86b1b17ab
 
 # install dependencies
 RUN apt-get update && \
   apt-get install -y git build-essential cmake make gnutls-dev uuid-dev
-RUN git clone -b ${TASKD_TAG} https://github.com/GothenburgBitFactory/taskserver.git taskd && \
+RUN git clone https://github.com/GothenburgBitFactory/taskserver.git taskd && \
   cd taskd && \
+  git checkout ${TASKD_TAG} && \
   cmake -DCMAKE_BUILD_TYPE=release . && \
   make install && \
   cp -rv pki /usr/local/
