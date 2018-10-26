@@ -23,5 +23,5 @@ USER taskd
 VOLUME ["/data"]
 EXPOSE 53589/tcp
 HEALTHCHECK --interval=1m --timeout=10s \
-  CMD nc -q1 localhost 53589 </dev/null
+  CMD nc -q1 taskd 53589 </dev/null
 ENTRYPOINT taskd server --data /data
