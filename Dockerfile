@@ -1,6 +1,6 @@
 FROM ubuntu:18.04 AS BUILD
 
-ARG TASKD_TAG=v1.1.0
+ARG TASKD_TAG=s1.2.0
 
 # install dependencies
 RUN apt-get update && \
