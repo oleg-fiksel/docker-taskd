@@ -22,6 +22,20 @@ ca.cert=/data/certs/ca.cert.pem
 ...
 ```
 
+### Cert generation
+
+```
+docker run --rm -ti -v /path/to/data:/data --entrypoint bash olegfiksel/docker-taskd
+```
+In the container:
+```
+cd /data
+cp -v /opt/pki/* .
+vim vars
+./generate
+exit
+```
+
 ## Running
 
 ### docker-compose/swarm
