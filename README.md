@@ -12,7 +12,7 @@ Details:
 log=/log/taskd.log
 pid.file=/data/taskd.pid
 root=/data
-server=taskd:53589
+server=0.0.0.0:53589
 client.cert=/data/certs/client.cert.pem
 client.key=/data/certs/client.key.pem
 server.cert=/data/certs/server.cert.pem
@@ -35,7 +35,6 @@ Docker stack file:
 version: '3.2'
 services:
  taskd:
-  hostname: taskd
   image: "olegfiksel/docker-taskd"
 #  healthcheck:
 #    test: ["CMD", "nc", "-q1", "taskd", "53589", "</dev/null"]
