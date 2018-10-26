@@ -24,11 +24,7 @@ ca.cert=/data/certs/ca.cert.pem
 
 ## Running
 
-### docker-compose
-
-TODO
-
-## docker swarm
+### docker-compose/swarm
 
 Docker stack file:
 ```
@@ -54,6 +50,6 @@ volumes:
   log:
 ```
 
-## docker commandline
+### docker commandline
 
 `docker run --rm -ti -v /path/to/data:/data -p 53589:53589 olegfiksel/docker-taskd`
