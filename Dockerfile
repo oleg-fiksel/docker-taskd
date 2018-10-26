@@ -1,13 +1,12 @@
 FROM ubuntu:18.04 AS BUILD
 
-ARG TASKD_VER=1.1.0
+ARG TASKD_TAG=v1.1.0
 
 # install dependencies
 RUN apt-get update && \
-  apt-get install -y wget build-essential cmake make gnutls-dev uuid-dev
-RUN wget "https://taskwarrior.org/download/taskd-${TASKD_VER}.tar.gz" && \
-  tar xzf taskd-${TASKD_VER}.tar.gz && \
-  cd taskd-* && \
+  apt-get install -y git build-essential cmake make gnutls-dev uuid-dev
+RUN git clone -b ${TASKD_TAG} https://github.com/GothenburgBitFactory/taskserver.git taskd && \
+  cd taskd && \
   cmake -DCMAKE_BUILD_TYPE=release . && \
   make install && \
   cp -rv pki /usr/local/
