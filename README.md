@@ -35,6 +35,12 @@ services:
  taskd:
   hostname: taskd
   image: "olegfiksel/docker-taskd"
+#  healthcheck:
+#    test: ["CMD", "nc", "-q1", "taskd", "53589", "</dev/null"]
+#    interval: 1m
+#    timeout: 10s
+#    retries: 3
+#    start_period: 30s
   environment:
     TZ: Europe/Berlin
   ports:
