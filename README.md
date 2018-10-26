@@ -56,4 +56,4 @@ volumes:
 
 ## docker commandline
 
-`docker run --rm -ti -v /path/to/data:/data -h taskd -p 53589:53589 olegfiksel/docker-taskd`
+`docker run --rm -ti -v /path/to/data:/data -p 53589:53589 olegfiksel/docker-taskd`
