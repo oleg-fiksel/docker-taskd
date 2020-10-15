@@ -1,6 +1,6 @@
 FROM ubuntu:18.04 AS BUILD
 
-ARG TASKD_VER=1.1.0
+ARG TASKD_VER=1.2.0
 
 # install dependencies
 RUN apt-get update && \
